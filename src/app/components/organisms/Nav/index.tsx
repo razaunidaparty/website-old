@@ -20,13 +20,15 @@ const Nav = () => {
           {/* <li>Media</li> */}
           <li>Get Involved</li>
         </ul>
-        <Image
-          src={"/gfx/PNLRU.png"}
-          alt="Partido Nacional de la Raza Unida Party"
-          width="150"
-          height="100"
-        />
-        <div>
+        <picture className={styles.logo}>
+          <Image
+            src={"/gfx/PNLRU.png"}
+            alt="Partido Nacional de la Raza Unida Party"
+            width="170"
+            height="100"
+          />
+        </picture>
+        <div className={styles.btns}>
           <ButtonGroup>
             <Button colorScheme="blue" variant={"outline"}>
               Members

@@ -14,13 +14,35 @@
 }
 
 .primaryNavItems {
+  flex: 1;
   display: flex;
   gap: 0.9em;
   align-items: center;
 
+  li {
+    line-height: 1.2;
+  }
+
   .menu {
+    // background: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    padding: 3px;
+    border-radius: 6px;
+
     svg {
       font-size: 2em;
     }
   }
+}
+
+.logo {
+  flex: 2;
+
+  img {
+    margin-inline: auto;
+  }
+}
+
+.btns {
+  flex: 1;
 }
