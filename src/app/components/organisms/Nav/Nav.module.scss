@@ -1,3 +1,26 @@
-#container {
-  background-color: red;
+@use "../../../styles/abstracts/variables" as var;
+#nav {
+  background-color: #fff;
+  padding-inline: 15px;
+  padding-block: 15px;
+
+  .container {
+    max-width: var.$maxWidth;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.primaryNavItems {
+  display: flex;
+  gap: 0.9em;
+  align-items: center;
+
+  .menu {
+    svg {
+      font-size: 2em;
+    }
+  }
 }
