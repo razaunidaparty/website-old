@@ -1,2 +1,3 @@
-styles
-components/*
+styles/*
+state/
+data/
