@@ -4,6 +4,7 @@ import { Button, ButtonGroup } from "@chakra-ui/react";
 
 import Image from "next/image";
 import { CgMenuLeftAlt as MenuIcon } from "react-icons/cg";
+import NavList from "../../molecules/NavList";
 import React from "react";
 import styles from "./Nav.module.scss";
 
@@ -16,8 +17,8 @@ const Nav = () => {
             <MenuIcon />
           </li>
           <li>About</li>
+          <li>Media</li>
           <li>Platform</li>
-          {/* <li>Media</li> */}
           <li>Get Involved</li>
         </ul>
         <picture className={styles.logo}>
