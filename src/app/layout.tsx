@@ -1,12 +1,16 @@
 import "@styles/base/reset.css";
 import "@styles/base/globals.css";
 
-import { Inter } from "next/font/google";
+import HeaderNav from "./components/organisms/HeaderNav";
+import { Montserrat } from "next/font/google";
 import Nav from "@components/organisms/Nav";
 import Providers from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
-
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-primary",
+});
 export const metadata = {
   title: "Raza Unida Party",
   description: "",
@@ -19,8 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <Providers>
+          <HeaderNav />
           <Nav />
           {children}
         </Providers>
