@@ -7,14 +7,16 @@
   .container {
     max-width: var.$maxWidth;
     margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas: "navItems logo buttons";
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
   }
 }
 
 .primaryNavItems {
-  flex: 1;
+  grid-area: navItems;
+
   display: flex;
   gap: 0.9em;
   align-items: center;
@@ -77,7 +79,7 @@
 }
 
 .logo {
-  flex: 2;
+  grid-area: logo;
 
   a {
     width: fit-content;
@@ -91,5 +93,36 @@
 }
 
 .btns {
-  flex: 1;
+  grid-area: buttons;
+  justify-self: end;
+}
+
+@media screen and (min-width: 551px) and (max-width: 830px) {
+  #nav .container {
+    grid-template-areas:
+      "logo navItems navItems"
+      "logo buttons buttons";
+    grid-template-rows: 2fr;
+    row-gap: 0.5em;
+
+    .primaryNavItems {
+      justify-self: end;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #nav .container {
+    grid-template-areas: "logo navItems";
+    grid-template-columns: repeat(2, 1fr);
+
+    .primaryNavItems {
+      justify-self: flex-end;
+    }
+  }
+  .navItems,
+  .btns {
+    display: none;
+  }
 }

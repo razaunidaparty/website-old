@@ -1,0 +1,51 @@
+@use "/src/app/styles/abstracts/variables" as var;
+
+// BASE
+.btn {
+  padding: 8px 20px;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: var(--btn-border-width, 1px) solid var(--btn-border-bg, var(--btn-bg));
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: var(--btn-shadow, 0px);
+
+  transition: background 250ms ease, color 250ms ease, box-shadow 250ms ease,
+    border 250ms ease;
+}
+
+%darkTheme {
+  --btn-bg: #333;
+  --btn-color: #fff;
+  --btn-border-bg: #333;
+  --btn-shadow: 0px 12px 18px -6px rgba(0 0 0 / 30%);
+}
+
+%orangeTheme {
+  --btn-bg: #{map-get(var.$colors, orange)};
+  --btn-color: #fff;
+  --btn-shadow: 0px 12px 18px -6px rgba(244, 114, 0, 0.56);
+}
+
+// THEMES
+.primary {
+  @extend %orangeTheme;
+
+  &:hover {
+    @extend %darkTheme;
+  }
+}
+
+.outline {
+  --btn-bg: #fff;
+  --btn-color: #{map-get(var.$colors, orange)};
+  --btn-border-bg: #efefef;
+
+  &:hover {
+    @extend %darkTheme;
+  }
+}
+
+.dark {
+  @extend %darkTheme;
+}

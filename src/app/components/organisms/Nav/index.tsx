@@ -1,10 +1,15 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import {
+  ButtonGroup,
+  Button as ChakraButton,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import nav, { INavItem, TNavChildItem } from "@/app/data/nav";
 
+import Button from "@components/atoms/Button";
 import { IoCloseCircle as CloseIcon } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
@@ -92,12 +97,10 @@ const Nav = () => {
         <div className={styles.btns}>
           <ButtonGroup>
             <Link href="/members">
-              <Button colorScheme="blue" variant={"outline"}>
-                Members
-              </Button>
+              <Button theme="outline">Members</Button>
             </Link>
             <Link href="/donate">
-              <Button colorScheme="blue">Donate</Button>
+              <Button>Donate</Button>
             </Link>
           </ButtonGroup>
         </div>
