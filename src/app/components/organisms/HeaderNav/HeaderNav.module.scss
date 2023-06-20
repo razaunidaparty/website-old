@@ -31,6 +31,18 @@
 }
 
 .item {
+  position: relative;
+
+  #underline {
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    background: map-get(var.$colors, orange);
+    height: 10px;
+    display: block;
+    border-radius: 4px 4px 0 0;
+  }
+
   a {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: #fff;
