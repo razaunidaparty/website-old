@@ -1,5 +1,6 @@
 import "@styles/base/reset.css";
 import "@styles/base/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Montserrat } from "next/font/google";
 import Providers from "./providers";
