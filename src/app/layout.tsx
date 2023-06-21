@@ -1,9 +1,7 @@
 import "@styles/base/reset.css";
 import "@styles/base/globals.css";
 
-import HeaderNav from "./components/organisms/HeaderNav";
 import { Montserrat } from "next/font/google";
-import Nav from "@components/organisms/Nav";
 import Providers from "./providers";
 
 const montserrat = Montserrat({
@@ -24,11 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Providers>
-          <HeaderNav />
-          <Nav />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
