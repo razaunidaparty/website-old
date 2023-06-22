@@ -1,9 +1,10 @@
+import Cover from "../../organisms/Cover";
 import HeaderNav from "@components/organisms/HeaderNav";
-import Image from "next/image";
 import Nav from "@components/organisms/Nav";
 import React from "react";
 
 interface PageProps {
+  title: string;
   children: React.ReactNode;
   cover: {
     src: string;
@@ -11,13 +12,20 @@ interface PageProps {
   };
 }
 
-// TODO: Add Navigation and Footer
+export default function Page({
+  title = "Page Title",
+  cover,
+  children,
+}: PageProps) {
+  const CoverImage = cover && cover.src && (
+    <Cover title={title} src={cover.src} alt={cover.alt} />
+  );
 
-export default function Page({ cover, children }: PageProps) {
   return (
     <>
       <HeaderNav />
       <Nav />
+      {CoverImage}
       <main>{children}</main>
     </>
   );

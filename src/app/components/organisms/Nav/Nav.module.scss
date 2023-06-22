@@ -3,6 +3,9 @@
   background-color: #fff;
   padding-inline: 15px;
   padding-block: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   .container {
     max-width: var.$maxWidth;
@@ -64,6 +67,7 @@
     // width: max-content;
     min-width: 150px;
     overflow: hidden;
+    padding: 0;
 
     a {
       font-size: 0.9rem;
