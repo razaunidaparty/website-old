@@ -39,12 +39,11 @@
 
 .title {
   position: absolute;
-  font-size: clamp(3rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
-  text-transform: uppercase;
   color: var(--cover-text);
   line-height: 1;
-  transition: all 0.3s ease-in-out;
+  // transition: all 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 551px) {
@@ -56,9 +55,8 @@
 
 @media screen and (max-width: 550px) {
   .title {
-    bottom: 15px;
-    left: 0;
-    right: 0;
+    bottom: 20px;
+    left: 20px;
     text-align: center;
   }
 }

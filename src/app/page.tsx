@@ -2,11 +2,17 @@
 // import styles from "./page.module.css";
 
 import Page from "@components/templates/page";
+import { PrismicRichText } from "@prismicio/react";
+import { createClient } from "@/prismicio";
 
-export default function Home() {
+export default async function Home() {
+  const client = createClient();
+  const page = await client.getSingle("homepage");
+
   return (
     <Page>
-      <h1>Coming Soon</h1>
+      {/* <p>Test</p> */}
+      <PrismicRichText field={page.data.text} />
     </Page>
   );
 }

@@ -1,0 +1,15 @@
+{
+  "id": "settings",
+  "label": "settings",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "donate_link": {
+        "type": "Link",
+        "config": { "label": "Donate Link", "placeholder": "", "select": null }
+      }
+    }
+  }
+}

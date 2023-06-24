@@ -55,7 +55,7 @@ export default [
       {
         id: 4,
         label: "Study Group",
-        href: "/studygroup",
+        href: "/studygroup/signup",
       },
       {
         id: 5,
@@ -77,7 +77,7 @@ export const headerNav = [
   {
     id: 1,
     label: "Study Group",
-    href: "/studygroup",
+    href: "/studygroup/signup",
     icon: BsBookmarkFill,
   },
   {

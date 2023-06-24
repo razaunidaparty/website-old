@@ -1,8 +1,6 @@
 @use "../../../styles/abstracts/variables" as var;
 
 .container {
-  position: sticky;
-  top: 0;
   z-index: 1;
   background-color: map-get(var.$colors, darkBlue);
   padding-inline: 15px;

@@ -1,5 +1,7 @@
 {
   "repositoryName": "razaunidaparty",
   "adapter": "@slicemachine/adapter-next",
-  "libraries": ["./slices"]
+  "libraries": [
+    "./src/slices"
+  ]
 }

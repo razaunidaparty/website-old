@@ -89,8 +89,9 @@ const Nav = () => {
             <Image
               src={"/gfx/PNLRU.png"}
               alt="Partido Nacional de la Raza Unida Party"
-              width="170"
-              height="100"
+              width={170}
+              height={100}
+              priority
             />
           </Link>
         </picture>

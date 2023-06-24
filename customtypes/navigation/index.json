@@ -1,0 +1,28 @@
+{
+  "id": "navigation",
+  "label": "Navigation",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "nav_item": {
+        "type": "Group",
+        "config": {
+          "label": "Nav item",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "label", "placeholder": "" }
+            },
+            "href": {
+              "type": "Link",
+              "config": { "label": "href", "placeholder": "", "select": null }
+            }
+          }
+        }
+      }
+    }
+  }
+}
