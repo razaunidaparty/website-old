@@ -1,11 +1,11 @@
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image";
 import React, { FC } from "react";
 
 import styles from "./Cover.module.scss";
 
 interface CoverProps extends ImageProps {
   title: string;
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   theme?: "dark" | "light";
 }
@@ -17,18 +17,19 @@ const Cover: FC<CoverProps> = ({
   theme = "light",
   ...props
 }) => {
-  const titleStyles = {
-    // Changes Title Color Based on Theme
-    "--title-color": theme === "dark" ? "#fff" : "#000",
+  const containerStyles = {
+    "--cover-bg": `url(${src})`,
   } as React.CSSProperties;
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      {...props}
+      data-theme={theme === "dark" ? "dark" : "light"}
+      style={containerStyles}
+    >
       <div className={styles.wrapper}>
-        <h1 className={styles.title} style={titleStyles}>
-          {title}
-        </h1>
-        {/* <Image src={src} alt={alt} width={500} height={500} {...props} /> */}
+        <h1 className={styles.title}>{title}</h1>
       </div>
     </div>
   );

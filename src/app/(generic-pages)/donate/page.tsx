@@ -10,8 +10,9 @@ export default function DonatePage() {
     <Page
       title="Donate"
       cover={{
-        src: "https://cdn.wccftech.com/wp-content/uploads/2023/06/iOS-17-7.jpg",
+        src: "/cover/donate_cover.jpg",
         alt: "Donate to Raza Unida Party",
+        theme: "dark",
       }}
     >
       <Section>

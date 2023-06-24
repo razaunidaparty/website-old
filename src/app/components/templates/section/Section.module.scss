@@ -3,4 +3,5 @@
 .container {
   max-width: var.$maxWidth;
   margin-inline: auto;
+  padding-block: map-get(var.$padding, md);
 }

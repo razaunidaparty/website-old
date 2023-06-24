@@ -3,4 +3,8 @@ $colors: (
   darkBlue: #1a1e36,
 );
 
+$padding: (
+  md: clamp(40px, 5vw, 60px),
+);
+
 $maxWidth: 1200px;

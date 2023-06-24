@@ -2,9 +2,31 @@
 
 .container {
   display: block;
-  background: #eee;
+  background-image: var(--cover-bg, #eee);
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: clamp(250px, 39vw, 350px);
+  position: relative;
+
+  &[data-theme="light"] {
+    --cover-text: #212121;
+    --cover-overlay: rgb(255 255 255 / 0.8);
+  }
+
+  &[data-theme="dark"] {
+    --cover-text: #fff;
+    --cover-overlay: rgb(0 0 0 / 0.4);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    display: block;
+    background-color: var(--cover-overlay);
+  }
 
   .wrapper {
     position: relative;
@@ -20,19 +42,21 @@
   font-size: clamp(3rem, 4vw, 3.5rem);
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--title-color);
+  color: var(--cover-text);
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 551px) {
   .title {
-    bottom: 20px;
     left: 20px;
+    bottom: 30px;
   }
 }
 
 @media screen and (max-width: 550px) {
   .title {
-    bottom: 0;
+    bottom: 15px;
     left: 0;
     right: 0;
     text-align: center;

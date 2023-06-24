@@ -34,6 +34,7 @@ export default function HeaderNav() {
         >
           <ul className={styles.wrapper}>
             {headerNav.map((item) => {
+              // Icon
               const Icon = item.icon;
               return (
                 <li
