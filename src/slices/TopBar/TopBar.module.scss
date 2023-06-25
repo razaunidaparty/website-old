@@ -16,6 +16,14 @@
 
     @media screen and (max-width: 550px) {
       flex-direction: column;
+
+      .button {
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -24,12 +32,4 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-}
-
-.button {
-  width: 100%;
-
-  button {
-    width: 100%;
-  }
 }

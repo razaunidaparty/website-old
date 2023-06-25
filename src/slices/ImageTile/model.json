@@ -1,0 +1,31 @@
+{
+  "id": "image_tile",
+  "type": "SharedSlice",
+  "name": "ImageTile",
+  "description": "ImageTile",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "cover": {
+          "type": "Image",
+          "config": { "label": "cover", "constraint": {}, "thumbnails": [] }
+        },
+        "label": {
+          "type": "Text",
+          "config": { "label": "label", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": { "label": "link", "placeholder": "", "select": null }
+        }
+      }
+    }
+  ]
+}

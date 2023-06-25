@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.wccftech.com/**",
+        hostname: "*",
         port: "",
         // pathname: "/images/**",
       },

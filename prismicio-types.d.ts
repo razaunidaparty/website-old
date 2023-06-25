@@ -62,12 +62,28 @@ interface HomepageDocumentData {
    *
    */
   meta_title: prismic.KeyTextField;
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices2[]
+   * - **Tab**: Hero Grid
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices2: prismic.SliceZone<HomepageDocumentDataSlices2Slice>;
 }
 /**
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = TopBarSlice;
+/**
+ * Slice for *Homepage → Slice Zone*
+ *
+ */
+type HomepageDocumentDataSlices2Slice = ImageTileSlice;
 /**
  * Homepage document from Prismic
  *
@@ -215,22 +231,65 @@ interface SettingsDocumentData {
    */
   donate_link: prismic.LinkField;
   /**
-   * Slice Zone field in *settings*
+   * Enable Top Bar field in *settings*
    *
-   * - **Field Type**: Slice Zone
+   * - **Field Type**: Boolean
    * - **Placeholder**: *None*
-   * - **API ID Path**: settings.slices[]
+   * - **Default Value**: false
+   * - **API ID Path**: settings.enable_top_bar
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
    *
    */
-  slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice>;
+  enable_top_bar: prismic.BooleanField;
+  /**
+   * Top Bar field in *settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.top_bar[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  top_bar: prismic.GroupField<Simplify<SettingsDocumentDataTopBarItem>>;
 }
 /**
- * Slice for *settings → Slice Zone*
+ * Item in settings → Top Bar
  *
  */
-type SettingsDocumentDataSlicesSlice = TopBarSlice;
+export interface SettingsDocumentDataTopBarItem {
+  /**
+   * Label field in *settings → Top Bar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.top_bar[].label
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  label: prismic.KeyTextField;
+  /**
+   * Button Text field in *settings → Top Bar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.top_bar[].button_text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  button_text: prismic.KeyTextField;
+  /**
+   * Link field in *settings → Top Bar*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.top_bar[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
 /**
  * settings document from Prismic
  *
@@ -294,6 +353,72 @@ type EmbedSliceVariation = EmbedSliceDefault;
  *
  */
 export type EmbedSlice = prismic.SharedSlice<"embed", EmbedSliceVariation>;
+/**
+ * Item in ImageTile → Items
+ *
+ */
+export interface ImageTileSliceDefaultItem {
+  /**
+   * cover field in *ImageTile → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_tile.items[].cover
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  cover: prismic.ImageField<never>;
+  /**
+   * label field in *ImageTile → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_tile.items[].label
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  label: prismic.KeyTextField;
+  /**
+   * link field in *ImageTile → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_tile.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Default variation for ImageTile Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageTileSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<ImageTileSliceDefaultItem>
+>;
+/**
+ * Slice variation for *ImageTile*
+ *
+ */
+type ImageTileSliceVariation = ImageTileSliceDefault;
+/**
+ * ImageTile Shared Slice
+ *
+ * - **API ID**: `image_tile`
+ * - **Description**: `ImageTile`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageTileSlice = prismic.SharedSlice<
+  "image_tile",
+  ImageTileSliceVariation
+>;
 /**
  * Primary content in TopBar → Primary
  *
@@ -368,6 +493,7 @@ declare module "@prismicio/client" {
     export type {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      HomepageDocumentDataSlices2Slice,
       HomepageDocument,
       NavigationDocumentData,
       NavigationDocumentDataNavItemItem,
@@ -376,13 +502,17 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       SettingsDocumentData,
-      SettingsDocumentDataSlicesSlice,
+      SettingsDocumentDataTopBarItem,
       SettingsDocument,
       AllDocumentTypes,
       EmbedSliceDefaultPrimary,
       EmbedSliceDefault,
       EmbedSliceVariation,
       EmbedSlice,
+      ImageTileSliceDefaultItem,
+      ImageTileSliceDefault,
+      ImageTileSliceVariation,
+      ImageTileSlice,
       TopBarSliceDefaultPrimary,
       TopBarSliceDefault,
       TopBarSliceVariation,

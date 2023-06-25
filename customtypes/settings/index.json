@@ -10,10 +10,34 @@
         "type": "Link",
         "config": { "label": "Donate Link", "placeholder": "", "select": null }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": { "choices": { "top_bar": { "type": "SharedSlice" } } }
+      "enable_top_bar": {
+        "type": "Boolean",
+        "config": {
+          "label": "Enable Top Bar",
+          "placeholder_false": "Disable",
+          "placeholder_true": "Enable",
+          "default_value": false
+        }
+      },
+      "top_bar": {
+        "type": "Group",
+        "config": {
+          "label": "Top Bar",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "" }
+            },
+            "button_text": {
+              "type": "Text",
+              "config": { "label": "Button Text", "placeholder": "" }
+            },
+            "link": {
+              "type": "Link",
+              "config": { "label": "Link", "placeholder": "", "select": null }
+            }
+          }
+        }
       }
     }
   }

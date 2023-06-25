@@ -18,7 +18,7 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": { "choices": {} }
+        "config": { "choices": { "top_bar": { "type": "SharedSlice" } } }
       }
     },
     "SEO & Metadata": {
@@ -43,6 +43,13 @@
           "placeholder": "A title of the page used for social media and search engines"
         },
         "type": "Text"
+      }
+    },
+    "Hero Grid": {
+      "slices2": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "image_tile": { "type": "SharedSlice" } } }
       }
     }
   }

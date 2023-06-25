@@ -1,0 +1,30 @@
+@use "/src/app/styles/abstracts/variables" as var;
+
+.container {
+  background-color: #eee;
+  padding: 40px 15px;
+
+  .wrapper {
+    display: grid;
+    max-width: var.$maxWidth;
+    margin-inline: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: .8rem;
+  }
+
+  [data-type="tile"]:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: span 2;
+  }
+
+  [data-type="tile"]:nth-child(4) {
+    grid-column: 4 / 5;
+    grid-row: span 2;
+  }
+
+  [data-type="tile"]:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+}

@@ -3,10 +3,9 @@ import "@styles/base/globals.css";
 
 import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-// import { PrismicPreview } from "@prismicio/next";
+import { PrismicPreview } from "@prismicio/next";
 import Providers from "./providers";
-
-// import { repositoryName } from "../prismicio";
+import { repositoryName } from "../prismicio";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className} suppressHydrationWarning>
         <Providers>{children}</Providers>
-        {/* <PrismicPreview repositoryName={repositoryName} /> */}
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );
