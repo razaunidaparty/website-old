@@ -1,6 +1,7 @@
 {
   "repositoryName": "razaunidaparty",
   "adapter": "@slicemachine/adapter-next",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
   "libraries": [
     "./src/slices"
   ]

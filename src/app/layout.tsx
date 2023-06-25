@@ -8,8 +8,6 @@ import Providers from "./providers";
 
 // import { repositoryName } from "../prismicio";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
-
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",

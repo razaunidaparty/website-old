@@ -189,7 +189,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = EmbedSlice;
 /**
  * Page document from Prismic
  *
@@ -214,7 +214,23 @@ interface SettingsDocumentData {
    *
    */
   donate_link: prismic.LinkField;
+  /**
+   * Slice Zone field in *settings*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *settings → Slice Zone*
+ *
+ */
+type SettingsDocumentDataSlicesSlice = TopBarSlice;
 /**
  * settings document from Prismic
  *
@@ -241,15 +257,15 @@ export type AllDocumentTypes =
  */
 interface EmbedSliceDefaultPrimary {
   /**
-   * Embed Link field in *Embed → Primary*
+   * Embed_link field in *Embed → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Embed
    * - **Placeholder**: *None*
    * - **API ID Path**: embed.primary.embed_link
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/core-concepts/embed
    *
    */
-  embed_link: prismic.LinkField;
+  embed_link: prismic.EmbedField;
 }
 /**
  * Default variation for Embed Slice
@@ -278,6 +294,69 @@ type EmbedSliceVariation = EmbedSliceDefault;
  *
  */
 export type EmbedSlice = prismic.SharedSlice<"embed", EmbedSliceVariation>;
+/**
+ * Primary content in TopBar → Primary
+ *
+ */
+interface TopBarSliceDefaultPrimary {
+  /**
+   * Label field in *TopBar → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_bar.primary.label
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  label: prismic.KeyTextField;
+  /**
+   * Button Text field in *TopBar → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_bar.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  button_text: prismic.KeyTextField;
+  /**
+   * Link field in *TopBar → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_bar.primary.link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Default variation for TopBar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TopBarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TopBarSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *TopBar*
+ *
+ */
+type TopBarSliceVariation = TopBarSliceDefault;
+/**
+ * TopBar Shared Slice
+ *
+ * - **API ID**: `top_bar`
+ * - **Description**: `TopBar`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TopBarSlice = prismic.SharedSlice<"top_bar", TopBarSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -297,12 +376,17 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       SettingsDocumentData,
+      SettingsDocumentDataSlicesSlice,
       SettingsDocument,
       AllDocumentTypes,
       EmbedSliceDefaultPrimary,
       EmbedSliceDefault,
       EmbedSliceVariation,
       EmbedSlice,
+      TopBarSliceDefaultPrimary,
+      TopBarSliceDefault,
+      TopBarSliceVariation,
+      TopBarSlice,
     };
   }
 }

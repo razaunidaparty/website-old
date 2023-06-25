@@ -9,6 +9,11 @@
       "donate_link": {
         "type": "Link",
         "config": { "label": "Donate Link", "placeholder": "", "select": null }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "top_bar": { "type": "SharedSlice" } } }
       }
     }
   }
