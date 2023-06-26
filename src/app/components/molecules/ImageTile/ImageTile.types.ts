@@ -1,4 +1,5 @@
 export type ImageTileProps = {
+  id: number;
   title: string;
   cover: string;
   link: ImageTileLink;

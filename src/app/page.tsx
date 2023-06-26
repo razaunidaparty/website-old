@@ -7,8 +7,9 @@ export default async function Home() {
   const client = createClient();
   const { data } = await client.getSingle("homepage");
 
-  const heroGridData = data.slices2[0]?.items.map((item) => {
+  const heroGridData = data.slices2[0]?.items.map((item, index) => {
     return {
+      id: index,
       label: item.label,
       title: item.title as string,
       cover: item.cover.url as string,

@@ -14,6 +14,7 @@ const HeroGrid: FC<HeroGridProps> = ({ data }) => {
       <div className={styles.wrapper}>
         {data.map((item) => (
           <ImageTile
+            id={item.id}
             label={item.label}
             key={item.title}
             title={item.title}

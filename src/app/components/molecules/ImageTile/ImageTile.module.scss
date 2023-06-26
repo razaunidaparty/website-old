@@ -120,3 +120,24 @@
   width: 100%;
   object-fit: cover;
 }
+
+// Set Grid Areas
+.imageTile-0 {
+  grid-area: md-left;
+}
+
+.imageTile-1 {
+  grid-area: sm-left;
+}
+
+.imageTile-2 {
+  grid-area: sm-right;
+}
+
+.imageTile-3 {
+  grid-area: md-right;
+}
+
+.imageTile-4 {
+  grid-area: lg-center;
+}

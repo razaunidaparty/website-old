@@ -4,9 +4,10 @@ import { TbArrowUpRight as ArrowIcon } from "react-icons/tb";
 import { ImageTileProps } from "./ImageTile.types";
 import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
+import classNames from "classnames";
 import styles from "./ImageTile.module.scss";
 
-const ImageTile = ({ title, cover, link, label }: ImageTileProps) => {
+const ImageTile = ({ id, title, cover, link, label }: ImageTileProps) => {
   const tileStyles = {
     "--tile-cover": `url(${cover})`,
   } as React.CSSProperties;
@@ -15,7 +16,7 @@ const ImageTile = ({ title, cover, link, label }: ImageTileProps) => {
     <PrismicNextLink
       href={link.url}
       data-type="tile"
-      className={styles.container}
+      className={classNames(styles.container, styles[`imageTile-${id}`])}
       style={tileStyles}
     >
       <div className={styles.header}>
