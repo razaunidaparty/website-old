@@ -369,15 +369,15 @@ export interface ImageTileSliceDefaultItem {
    */
   cover: prismic.ImageField<never>;
   /**
-   * label field in *ImageTile → Items*
+   * Title field in *ImageTile → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_tile.items[].label
+   * - **API ID Path**: image_tile.items[].title
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  label: prismic.KeyTextField;
+  title: prismic.KeyTextField;
   /**
    * link field in *ImageTile → Items*
    *
@@ -388,6 +388,22 @@ export interface ImageTileSliceDefaultItem {
    *
    */
   link: prismic.LinkField;
+  /**
+   * Label field in *ImageTile → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_tile.items[].label
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  label: prismic.SelectField<
+    | "Chicanx Shop"
+    | "Programs"
+    | "Initiatives"
+    | "Official Statement"
+    | "Events"
+  >;
 }
 /**
  * Default variation for ImageTile Slice

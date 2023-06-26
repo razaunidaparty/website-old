@@ -10,7 +10,6 @@
 					[
 						"cover",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
@@ -28,6 +27,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -35,8 +37,8 @@
 						"label",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "ancient",
-							"type": "Text"
+							"value": "Chicanx Shop",
+							"type": "Select"
 						}
 					],
 					[
@@ -47,6 +49,14 @@
 								"__TYPE__": "ExternalLink",
 								"url": "http://google.com"
 							}
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "quietly",
+							"type": "Text"
 						}
 					]
 				]

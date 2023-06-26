@@ -1,3 +1,5 @@
+@use "/src/app/styles/abstracts/variables" as var;
+
 .container {
   display: block;
   background-image: var(--tile-cover);
@@ -7,6 +9,8 @@
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  box-shadow: 5px 0px 20px -5px rgba(0, 0, 0, 0.5);
+  color: #fff;
 
   &::after {
     content: "";
@@ -24,44 +28,90 @@
 
     .header {
       .icon {
+        translate: 3px -3px;
         background: #fff;
         color: #000;
+        box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.8);
       }
     }
   }
 }
 
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
+  gap: 0.5em;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-  background-image: linear-gradient(180deg, rgb(0 0 0 / 50%), transparent);
-  padding: 10px 10px 20px 15px;
+  padding: 15px;
   z-index: 1;
-  gap: 0.5em;
 
   .label {
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: normal;
-    line-height: 1.2;
+    .chip {
+      background: map-get(var.$colors, orange);
+      box-shadow: 0px 5px 10px -2px #f5821f95;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9em;
+      line-height: 1;
+    }
   }
 
   .icon {
     display: block;
-    background: rgb(255 255 255 / 25%);
+    background: rgb(255 255 255 / 30%);
     backdrop-filter: blur(3px);
     padding: 5px;
     border-radius: 100px;
     aspect-ratio: 1;
-    transition: color 250ms ease, background 250ms ease;
+    transition: color 250ms ease, background 250ms ease, box-shadow 250ms ease,
+      translate 250ms ease;
 
     svg {
       font-size: 20px;
       font-weight: 800;
     }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: inherit;
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.008) 8%,
+    hsla(0, 0%, 0%, 0.03) 15.2%,
+    hsla(0, 0%, 0%, 0.063) 21.8%,
+    hsla(0, 0%, 0%, 0.107) 27.9%,
+    hsla(0, 0%, 0%, 0.158) 33.7%,
+    hsla(0, 0%, 0%, 0.215) 39.2%,
+    hsla(0, 0%, 0%, 0.275) 44.7%,
+    hsla(0, 0%, 0%, 0.335) 50.1%,
+    hsla(0, 0%, 0%, 0.395) 55.7%,
+    hsla(0, 0%, 0%, 0.452) 61.6%,
+    hsla(0, 0%, 0%, 0.503) 67.9%,
+    hsla(0, 0%, 0%, 0.547) 74.8%,
+    hsla(0, 0%, 0%, 0.58) 82.4%,
+    hsla(0, 0%, 0%, 0.602) 90.7%,
+    hsla(0, 0%, 0%, 0.61) 100%
+  );
+  padding: 15px;
+  z-index: 1;
+
+  .copy {
+    font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 1.3;
   }
 }
 

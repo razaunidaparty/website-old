@@ -17,13 +17,27 @@
           "type": "Image",
           "config": { "label": "cover", "constraint": {}, "thumbnails": [] }
         },
-        "label": {
+        "title": {
           "type": "Text",
-          "config": { "label": "label", "placeholder": "" }
+          "config": { "label": "Title", "placeholder": "" }
         },
         "link": {
           "type": "Link",
           "config": { "label": "link", "placeholder": "", "select": null }
+        },
+        "label": {
+          "type": "Select",
+          "config": {
+            "label": "Label",
+            "placeholder": "",
+            "options": [
+              "Chicanx Shop",
+              "Programs",
+              "Initiatives",
+              "Official Statement",
+              "Events"
+            ]
+          }
         }
       }
     }

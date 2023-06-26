@@ -1,29 +1,38 @@
+"use client";
+
 import { TbArrowUpRight as ArrowIcon } from "react-icons/tb";
-import Image from "next/image";
-import Link from "next/link";
+import { ImageTileProps } from "./ImageTile.types";
+import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
 import styles from "./ImageTile.module.scss";
 
-const ImageTile = (props: ImageTileProps) => {
+const ImageTile = ({ title, cover, link, label }: ImageTileProps) => {
   const tileStyles = {
-    "--tile-cover":
-      "url(https://images.prismic.io/razaunidaparty/690b2284-07f5-4073-8db1-6677b741bcab_documerica-REEMam8FQAQ-unsplash_1500x1010.jpg?auto=compress,format)",
+    "--tile-cover": `url(${cover})`,
   } as React.CSSProperties;
+
   return (
-    <Link
-      href="https://google.com"
+    <PrismicNextLink
+      href={link.url}
       data-type="tile"
       className={styles.container}
       style={tileStyles}
     >
       <div className={styles.header}>
-        <span className={styles.label}>Lorem Ipsum Dolor</span>
+        <div className={styles.label}>
+          {label && <span className={styles.chip}>{label}</span>}
+        </div>
         <span className={styles.icon}>
           <ArrowIcon />
         </span>
       </div>
-    </Link>
+      <div className={styles.footer}>
+        <span className={styles.copy}>{title}</span>
+      </div>
+    </PrismicNextLink>
   );
 };
+
+ImageTile.displayName = "Image Tile";
 
 export default ImageTile;
