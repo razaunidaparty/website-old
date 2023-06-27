@@ -1,0 +1,40 @@
+@use "/src/app/styles/abstracts/variables" as var;
+
+.container {
+  width: 100%;
+  padding: 10px 15px;
+  background: map-get(var.$colors, dark);
+
+  .wrapper {
+    max-width: var.$maxWidth;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
+}
+
+.type {
+  color: #fff;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+
+  &:not(&:last-child)::after {
+    content: "•";
+    margin-inline-start: 1em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    overflow-x: scroll;
+
+    .type {
+      width: fit-content;
+    }
+  }
+}
