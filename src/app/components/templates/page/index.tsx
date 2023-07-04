@@ -1,4 +1,5 @@
 import Cover from "@components/organisms/Cover";
+import Footer from "@components/organisms/Footer";
 import HeaderNav from "@components/organisms/HeaderNav";
 import Nav from "@components/organisms/Nav";
 import { PageProps } from "./page.types";
@@ -27,6 +28,7 @@ export default async function Page({
       <Nav />
       {CoverImage}
       <main>{children}</main>
+      <Footer />
       {modules && modules.length > 0 && handleModules(modules)}
     </>
   );

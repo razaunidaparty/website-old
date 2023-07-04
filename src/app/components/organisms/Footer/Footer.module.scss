@@ -1,0 +1,42 @@
+@use "/src/app/styles/abstracts/variables" as var;
+
+.container {
+  width: 100%;
+  padding-inline: 15px;
+  background: map-get(var.$colors, dark);
+}
+
+.wrapper {
+  max-width: var.$maxWidth;
+  margin-inline: auto;
+  padding-block: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "copyright poweredBy social";
+
+  .copyright {
+    grid-area: copyright;
+    text-align: left;
+    color: #fff;
+  }
+
+  .poweredBy {
+    grid-area: poweredBy;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .social {
+    grid-area: social;
+    text-align: right;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      fill: #fff;
+    }
+  }
+}
