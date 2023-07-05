@@ -38,6 +38,26 @@
             }
           }
         }
+      },
+      "social_media": {
+        "type": "Group",
+        "config": {
+          "label": "Social Media",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": { "label": "link", "placeholder": "", "select": null }
+            },
+            "platform": {
+              "type": "Select",
+              "config": {
+                "label": "platform",
+                "placeholder": "",
+                "options": ["Facebook", "Instagram"]
+              }
+            }
+          }
+        }
       }
     }
   }

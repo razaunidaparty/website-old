@@ -253,6 +253,19 @@ interface SettingsDocumentData {
    *
    */
   top_bar: prismic.GroupField<Simplify<SettingsDocumentDataTopBarItem>>;
+  /**
+   * Social Media field in *settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_media[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  social_media: prismic.GroupField<
+    Simplify<SettingsDocumentDataSocialMediaItem>
+  >;
 }
 /**
  * Item in settings → Top Bar
@@ -289,6 +302,32 @@ export interface SettingsDocumentDataTopBarItem {
    *
    */
   link: prismic.LinkField;
+}
+/**
+ * Item in settings → Social Media
+ *
+ */
+export interface SettingsDocumentDataSocialMediaItem {
+  /**
+   * link field in *settings → Social Media*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_media[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+  /**
+   * platform field in *settings → Social Media*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_media[].platform
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  platform: prismic.SelectField<"Facebook" | "Instagram">;
 }
 /**
  * settings document from Prismic
@@ -519,6 +558,7 @@ declare module "@prismicio/client" {
       PageDocument,
       SettingsDocumentData,
       SettingsDocumentDataTopBarItem,
+      SettingsDocumentDataSocialMediaItem,
       SettingsDocument,
       AllDocumentTypes,
       EmbedSliceDefaultPrimary,
