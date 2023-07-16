@@ -4,23 +4,24 @@ import {
   FaFacebookSquare as FbIcon,
   FaInstagramSquare as InstaIcon,
 } from "react-icons/fa";
-import React, { useEffect } from "react";
 
+import React from "react";
 import styles from "./Footer.module.scss";
 
 async function Footer() {
-  const [year, setYear] = React.useState<number | undefined>(undefined);
+  // const [year, setYear] = React.useState<number | undefined>(undefined);
 
-  useEffect(() => {
-    const date = new Date();
-    setYear(date.getFullYear());
-  }, [year]);
+  // useEffect(() => {
+  //   const date = new Date();
+  //   setYear(date.getFullYear());
+
+  //   return () => {};
+  // }, []);
 
   return (
     <footer className={styles.container}>
       <div className={styles.wrapper}>
-        <>{console.log(year)}</>
-        <p className={styles.copyright}>&copy; {year} Raza Unida Party</p>
+        <p className={styles.copyright}>&copy; 2023 Raza Unida Party</p>
 
         <p className={styles.poweredBy}>¡Powered by La Raza!</p>
 

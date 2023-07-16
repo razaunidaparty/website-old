@@ -1,5 +1,5 @@
 import "@styles/base/reset.css";
-import "@styles/base/globals.css";
+import "@styles/base/globals.scss";
 
 import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
