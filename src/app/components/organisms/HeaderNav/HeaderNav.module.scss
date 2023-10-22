@@ -20,8 +20,9 @@
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
       align-content: center;
-      gap: 1em;
-      padding-block: 15px;
+      padding-block: 30px;
+      row-gap: 1.5em;
+      column-gap: 1em;
 
       .item:nth-child(5) {
         grid-column: 1 / -1;

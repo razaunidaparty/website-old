@@ -1,9 +1,10 @@
 "use client";
 
+import { NavBase, headerNav } from "@data/nav";
+
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import React from "react";
-import { headerNav } from "@data/nav";
 import { headerNav as headerNavAtom } from "@state/navAtom";
 import { motion } from "framer-motion";
 import styles from "./HeaderNav.module.scss";
@@ -33,7 +34,7 @@ export default function HeaderNav() {
           onMouseLeave={() => setNavUnderline(undefined)}
         >
           <ul className={styles.wrapper}>
-            {headerNav.map((item) => {
+            {headerNav.map((item: NavBase) => {
               // Icon
               const Icon = item.icon;
               return (

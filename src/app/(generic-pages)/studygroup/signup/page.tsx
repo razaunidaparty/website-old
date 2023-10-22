@@ -1,3 +1,4 @@
+import Iframe from "react-iframe";
 import { Metadata } from "next";
 import Page from "@components/templates/page";
 import React from "react";
@@ -20,13 +21,14 @@ export default function StudygroupSignupPage() {
       modules={["tally"]}
     >
       <Section>
-        <iframe
+        <Iframe
+          // data-tally-src="https://tally.so/embed/3XrQ6j?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          url="https://tally.so/embed/3XrQ6j?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
           data-tally-src="https://tally.so/embed/3XrQ6j?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
           width="100%"
           height="284"
-          frameBorder="0"
           title="Study Group Form"
-        ></iframe>
+        ></Iframe>
       </Section>
     </Page>
   );

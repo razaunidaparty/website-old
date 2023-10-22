@@ -68,13 +68,6 @@ export default [
 
 export const headerNav = [
   {
-    id: 0,
-    label: "Members",
-    href: "/membership",
-    icon: FaUserAlt,
-  },
-
-  {
     id: 1,
     label: "Study Group",
     href: "/studygroup/signup",
@@ -82,20 +75,26 @@ export const headerNav = [
   },
   {
     id: 2,
-    label: "Shop",
-    href: "https://chicanx.shop",
-    icon: FaShoppingCart,
+    label: "News",
+    href: "/news",
+    icon: RiFilePaper2Fill,
   },
   {
     id: 3,
     label: "El Sembrador",
-    href: "/elSembrador",
-    icon: RiFilePaper2Fill,
+    href: "#",
+    icon: FaShoppingCart,
   },
   {
     id: 4,
-    label: "El Congreso",
-    href: "/congreso",
-    icon: FaFistRaised,
+    label: "Shop",
+    href: "https://chicanx.shop",
+    icon: FaShoppingCart,
   },
+  // {
+  //   id: 4,
+  //   label: "El Congreso",
+  //   href: "/congreso",
+  //   icon: FaFistRaised,
+  // },
 ] satisfies NavBase[];
