@@ -36,16 +36,14 @@ export default function HeaderNav() {
           <ul className={styles.wrapper}>
             {headerNav.map((item: NavBase) => {
               // Icon
-              const Icon = item.icon;
+              // const Icon = item.icon;
               return (
                 <li
                   key={item.id}
                   className={styles.item}
                   onMouseEnter={() => handleUnderlineHover(item.id)}
                 >
-                  <Link href={item.href}>
-                    {item.label} <Icon />
-                  </Link>
+                  <Link href={item.href}>{item.label}</Link>
                   {item.id === navUnderline && isMobile ? (
                     <motion.span
                       key="underline"
