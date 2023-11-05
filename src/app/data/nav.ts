@@ -19,9 +19,9 @@ export type TNavChildItem = Exclude<INavItem, { children: undefined }>;
 
 export default [
   {
-    id: 1,
-    label: "Learn",
-    href: "/learn",
+    id: 0,
+    label: "Platform",
+    href: "/platform",
     children: [
       {
         id: 1,
@@ -33,13 +33,6 @@ export default [
         label: "Media",
         href: "/media",
       },
-    ],
-  },
-  {
-    id: 2,
-    label: "Platform",
-    href: "/platform",
-    children: [
       {
         id: 3,
         label: "Constitution",
@@ -48,7 +41,7 @@ export default [
     ],
   },
   {
-    id: 3,
+    id: 1,
     label: "Community",
     href: "/community",
     children: [
@@ -61,6 +54,18 @@ export default [
         id: 5,
         label: "Become a Member",
         href: "/membership",
+      },
+    ],
+  },
+  {
+    id: 2,
+    label: "Get Involved",
+    href: "/get-involved",
+    children: [
+      {
+        id: 6,
+        label: "Donate",
+        href: "/donate",
       },
     ],
   },

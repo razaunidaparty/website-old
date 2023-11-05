@@ -100,8 +100,8 @@ const Nav = () => {
             <Link href="/members">
               <Button theme="outline">Members</Button>
             </Link>
-            <Link href="/donate">
-              <Button>Donate</Button>
+            <Link href="/join">
+              <Button>Join Now</Button>
             </Link>
           </ButtonGroup>
         </div>

@@ -15,7 +15,7 @@ export default function Section({
   const sectionClass = classNames(styles.container, className);
   return (
     <section className={sectionClass} {...props}>
-      {children}
+      <div className={styles.wrapper}>{children}</div>
     </section>
   );
 }
